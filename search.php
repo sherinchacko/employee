@@ -24,13 +24,14 @@
     <h3>
         Welcome To The Search Page
     </h3>
+    <form method="GET">
     <table class="table">
         <tr>
         <td>
             Employee code
         </td>
         <td>
-            <input type="number"class="form-control">
+            <input type="number"class="form-control"name="getEmpCode">
         </td>
         </tr>
         <tr>
@@ -38,11 +39,19 @@
 
             </td>
             <td>
-                <button class="btn btn-success">
+                <button type="submit" class="btn btn-success"name="submit">
                     Search
                 </button>
             </td>
         </tr>
     </table>
+    </form>
 </body>
 </html>
+<?php
+if(isset($_GET["submit"]))
+{
+    $Emp=$_GET["getEmpCode"];
+    echo $Emp;
+}
+?>

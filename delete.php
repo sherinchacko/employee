@@ -24,13 +24,14 @@
     <h4>
         Do you wish to delete!!!!!
     </h4>
+    <form method="GET">
     <table class="table">
         <tr>
             <td>
                 Employee code:
             </td>
             <td>
-                <input type="number"class="form-control">
+                <input type="number"class="form-control"name="getEmpCode">
             </td>
         </tr>
         <tr>
@@ -38,12 +39,23 @@
 
             </td>
             <td>
-                <button class="btn btn-warning">
+                <button type="submit" name="submit" class="btn btn-warning">
                     Delete
                 </button>
             </td>
         </tr>
 
     </table>
+    </form>
 </body>
 </html>
+<?php
+{
+    if(isset($_GET["submit"]))
+    {
+        $Emp=$_GET["getEmpCode"];
+        echo $Emp;
+
+    }
+}
+?>

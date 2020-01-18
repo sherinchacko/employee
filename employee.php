@@ -21,14 +21,14 @@
             </li>
           </ul>
     </nav>
-
-    <table class="table">
+    <form method="GET">
+     <table class="table">
         <tr>
             <td>
                 Employee code:
             </td>
             <td>
-                <input type="number"class="form-control">
+                <input type="number"class="form-control"name="getEmployeeCode">
             </td>
         </tr>
         <tr>
@@ -36,7 +36,7 @@
                 Name:
             </td>
             <td>
-                <input type="text"class="form-control">
+                <input type="text"class="form-control"name="getName">
             </td>
         </tr>
         <tr>
@@ -44,7 +44,7 @@
                 Dob:
             </td>
             <td>
-                <input type="date"class="form-control">
+                <input type="date"class="form-control"name="getDob">
             </td>
         </tr>
         <tr>
@@ -52,7 +52,7 @@
                 Email
             </td>
             <td>
-                <input type="email"class="form-control">
+                <input type="email"class="form-control"name="getEmail">
             </td>
         </tr>
         <tr>
@@ -60,7 +60,7 @@
                 district
             </td>
             <td>
-                <select>
+                <select name="getDistrict">
                     <option value="Tvm">TVM</option>
                     <option value="Ernakulam">Eklm</option>
                     <option value="kannur">Kannur</option>
@@ -74,7 +74,7 @@
                 Age
             </td>
             <td>
-                <input type="number"class="form-control">
+                <input type="number"class="form-control"name="getAge">
             </td>
         </tr>
         <tr>
@@ -82,7 +82,7 @@
                 User name
             </td>
             <td>
-                <input type="text"class="form-control">
+                <input type="text"class="form-control"name="getUserName">
             </td>
         </tr>
         <tr>
@@ -90,7 +90,7 @@
                 Password
             </td>
             <td>
-                <input type="password"class="form-control">
+                <input type="password"class="form-control"name="getPassword">
             </td>
         </tr>
         <tr>
@@ -98,7 +98,7 @@
                 Conform Password
             </td>
             <td>
-                <input type="password"class="form-control">
+                <input type="password"class="form-control"name="getPass">
             </td>
         </tr>
         <tr>
@@ -106,11 +106,43 @@
 
             </td>
             <td>
-                <button class="btn btn-danger">
+                <button type="submit" name="submit" class="btn btn-danger">
                     Register
                 </button>
             </td>
         </tr>
     </table>
+</form>
 </body>
 </html>
+<?php
+if(isset($_GET["submit"]))
+{
+  $Employee=$_GET["getEmployeeCode"];
+  $Name=$_GET["getName"];
+  $Dob=$_GET["getDob"];
+  $Email=$_GET["getEmail"];
+  $District=$_GET["getDistrict"];
+  $Age=$_GET["getAge"];
+  $User=$_GET["getUserName"];
+  $Password=$_GET["getPassword"];
+  $Conform=$_GET["getPass"];
+  echo $Employee;
+  echo "<br>";
+  echo $Name;
+  echo "<br>";
+  echo $Dob;
+  echo "<br>";
+  echo $Email;
+  echo "<br>";
+  echo $District;
+  echo "<br>";
+  echo $Age;
+  echo "<br>";
+  echo $User;
+  echo "<br>";
+  echo $Password;
+  echo "<br>";
+  echo $Conform;
+}
+?>
