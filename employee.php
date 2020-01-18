@@ -11,13 +11,13 @@
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
         <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="employee.html">Employee Entry</a>
+              <a class="nav-link" href="employee.php">Employee Entry</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="search.html">Search</a>
+              <a class="nav-link" href="search.php">Search</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="delete.html">Delete</a>
+              <a class="nav-link" href="delete.php">Delete</a>
             </li>
           </ul>
     </nav>
