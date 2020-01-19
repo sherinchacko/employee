@@ -127,22 +127,22 @@ if(isset($_GET["submit"]))
   $User=$_GET["getUserName"];
   $Password=$_GET["getPassword"];
   $Conform=$_GET["getPass"];
-  echo $Employee;
-  echo "<br>";
-  echo $Name;
-  echo "<br>";
-  echo $Dob;
-  echo "<br>";
-  echo $Email;
-  echo "<br>";
-  echo $District;
-  echo "<br>";
-  echo $Age;
-  echo "<br>";
-  echo $User;
-  echo "<br>";
-  echo $Password;
-  echo "<br>";
-  echo $Conform;
+  $Servername="localhost";
+  $Dbusername="root";
+  $Dbpassword="";
+  $Dbname="workers";
+  $connection=new mysqli($Servername,$Dbusername,$Dbpassword,$Dbname);
+  $Sql="INSERT INTO `employee`( `EmployeeCode`, `Name`, `Dob`, `Email`, `District`, `Age`, `Username`, `Password`, `Conformpass`) 
+  VALUES ($Employee,'$Name',$Dob,'$Email','$District',$Age,'$User','$Password','$Conform')";
+  $result=$connection->query($Sql);
+  if($result===TRUE)
+  {
+      echo "successfully inserted";
+  }
+  else
+  {
+      echo $connection->error;
+  }
+ 
 }
 ?>
