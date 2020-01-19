@@ -133,7 +133,7 @@ if(isset($_GET["submit"]))
   $Dbname="workers";
   $connection=new mysqli($Servername,$Dbusername,$Dbpassword,$Dbname);
   $Sql="INSERT INTO `employee`( `EmployeeCode`, `Name`, `Dob`, `Email`, `District`, `Age`, `Username`, `Password`, `Conformpass`) 
-  VALUES ($Employee,'$Name',$Dob,'$Email','$District',$Age,'$User','$Password','$Conform')";
+  VALUES ($Employee,'$Name','$Dob','$Email','$District',$Age,'$User','$Password','$Conform')";
   $result=$connection->query($Sql);
   if($result===TRUE)
   {
