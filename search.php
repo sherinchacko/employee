@@ -52,6 +52,37 @@
 if(isset($_GET["submit"]))
 {
     $Emp=$_GET["getEmpCode"];
-    echo $Emp;
+    $Servername="localhost";
+    $Dbusername="root";
+    $Dbpassword="";
+    $Dbname="workers";
+    $connection=new mysqli($Servername,$Dbusername,$Dbpassword,$Dbname);
+    $Sql="SELECT `Name`, `Dob`, `Email`, `District`, `Age`, `Username`, `Password`, `Conformpass` FROM `employee` WHERE `EmployeeCode`=$Emp";
+    $result=$connection->query($Sql);
+    if($result->num_rows>0)
+    {
+        while($row=$result->fetch_assoc())
+        {
+            $Name=$row["Name"];
+            $Dob=$row["Dob"];
+            $Email=$row["Email"];
+            $District=$row["District"];
+            $Age=$row["Age"];
+            $User=$row["Username"];
+            $Password=$row["Password"];
+            $conform=$row["Conformpass"];
+            echo"<table class='table'> <tr> <td> Name </td> <td> $Name </td> </tr>
+            <tr> <td> Dob </td> <td> $Dob </td> </tr>
+            <tr> <td> Email </td> <td> $Email </td> </tr>
+            <tr> <td> District </td> <td> $District </td> </tr>
+            <tr> <td> Age </td> <td> $Age </td> </tr>
+            <tr> <td> Username </td> <td> $User </td> </tr>
+            <tr> <td> password </td> <td> $Password </td> </tr>
+            <tr> <td> conformpass </td> <td> $conform </td> </tr>";
+        }
+    }
+    else{
+        echo "ivalid";
+    }        
 }
 ?>
